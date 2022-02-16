@@ -1,4 +1,4 @@
-### Hey there, I am an undergraduate Comp Sci student [@UBC](https://www.ubc.ca/)
+### Hey there, I am a first year comp sci student [@UBC](https://www.ubc.ca/) and developer 
 
 #### Languages:
 - Java
