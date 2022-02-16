@@ -5,6 +5,7 @@
 - Python
 - C++
 - Swift
+- Lua
 
 [![Ben's GitHub stats](https://github-readme-stats.vercel.app/api?username=Benjamin-Norton&show_icons=true&theme=gruvbox)](https://github.com/Benjamin-Norton/github-readme-stats)
 
