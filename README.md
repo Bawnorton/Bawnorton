@@ -3,7 +3,7 @@
 #### Languages:
 - Java
 - Python
-- C++
+- C/C++
 - Swift
 - Lua
 
