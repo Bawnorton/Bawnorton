@@ -3,6 +3,7 @@
 #### Languages:
 - Java
 - Python
+- C#
 - Swift
 - Lua
 - JavaScript
