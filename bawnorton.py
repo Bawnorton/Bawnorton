@@ -10,6 +10,7 @@ import requests
 HEADERS = {'authorization': 'token ' + os.getenv('README_TOKEN')}
 USERNAME = os.getenv('USERNAME')
 
+
 def recursive_loc(owner, repo_name, data, addition_total=0, deletion_total=0, my_commits=0, cursor=None):
     query = '''
     query ($repo_name: String!, $owner: String!, $cursor: String) {
