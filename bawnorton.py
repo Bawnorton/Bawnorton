@@ -147,7 +147,9 @@ def cache_builder(edges, force_cache, loc_add=0, loc_del=0):
             except TypeError:
                 data[edge_index] = repo_hash + ' 0 0 0 0\n'
     with open(filename, 'w') as f:
-        f.writelines(data)
+        for line in data:
+            if line.split()[1] != '0':
+                f.write(line)
     for line in data:
         loc = line.split()
         loc_add += int(loc[3])
