@@ -2,7 +2,6 @@
 # https://github.com/Andrew6rant/Andrew6rant
 
 import hashlib
-import json
 from xml.dom import minidom
 
 import dotenv
