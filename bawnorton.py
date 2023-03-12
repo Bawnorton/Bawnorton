@@ -1,14 +1,15 @@
-# Code from Andrew6rant's README.md
+# Code adapted from Andrew6rant's README.md
 # https://github.com/Andrew6rant/Andrew6rant
 
 import hashlib
-import os
+import json
 from xml.dom import minidom
 
+import dotenv
 import requests
 
-HEADERS = {'authorization': 'token ' + os.environ['README_TOKEN']}
-USERNAME = os.environ['USERNAME']
+HEADERS = {'authorization': 'token ' + dotenv.dotenv_values()['README_TOKEN']}
+USERNAME = dotenv.dotenv_values()['USERNAME']
 
 
 def recursive_loc(owner, repo_name, data, addition_total=0, deletion_total=0, my_commits=0, cursor=None):
@@ -141,14 +142,16 @@ def cache_builder(edges, force_cache, loc_add=0, loc_del=0):
                 if int(commit_count) != edges[edge_index]['node']['defaultBranchRef']['target']['history']['totalCount']:
                     owner, repo_name = edges[edge_index]['node']['nameWithOwner'].split('/')
                     loc = recursive_loc(owner, repo_name, data)
-                    data[edge_index] = repo_hash + ' ' + str(
-                        edges[edge_index]['node']['defaultBranchRef']['target']['history'][
-                            'totalCount']) + f' {loc[2]} {loc[0]} {loc[1]}\n'
+                    data[edge_index] = repo_hash + ' ' + str(edges[edge_index]['node']['defaultBranchRef']['target']['history']['totalCount']) + f' {loc[2]} {loc[0]} {loc[1]}\n'
             except TypeError:
                 data[edge_index] = repo_hash + ' 0 0 0 0\n'
+        else:
+            owner, repo_name = edges[edge_index]['node']['nameWithOwner'].split('/')
+            loc = recursive_loc(owner, repo_name, data)
+            data[edge_index] = hashlib.sha256(edges[edge_index]['node']['nameWithOwner'].encode('utf-8')).hexdigest() + ' ' + str(edges[edge_index]['node']['defaultBranchRef']['target']['history']['totalCount']) + f' {loc[2]} {loc[0]} {loc[1]}\n'
     with open(filename, 'w') as f:
         for line in data:
-            if line.split()[1] != '0':
+            if line.split(" ")[1] != 0:
                 f.write(line)
     for line in data:
         loc = line.split()
