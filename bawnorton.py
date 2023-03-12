@@ -2,13 +2,13 @@
 # https://github.com/Andrew6rant/Andrew6rant
 
 import hashlib
+import os
 from xml.dom import minidom
 
-import dotenv
 import requests
 
-HEADERS = {'authorization': 'token ' + dotenv.dotenv_values()['README_TOKEN']}
-USERNAME = dotenv.dotenv_values()['USERNAME']
+HEADERS = {'authorization': 'token ' + os.environ['README_TOKEN']}
+USERNAME = os.environ['USERNAME']
 
 
 def recursive_loc(owner, repo_name, data, addition_total=0, deletion_total=0, my_commits=0, cursor=None):
