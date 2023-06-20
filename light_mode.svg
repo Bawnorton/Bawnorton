@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" font-family="Andale Mono,AndaleMono,Consolas,monospace" width="600px" height="340px" font-size="16px">
-<rect width="600px" height="340px" fill="#f6f8fa" rx="15"/>
+<rect width="600px" height="320px" fill="#f6f8fa" rx="15"/>
 <text fill="#24292f" class="ascii" x="29.0">
 <tspan x="30" y="50" style="font-size: 20px; fill:#000000">Bawnorton - Benjamin Norton</tspan>
 <tspan x="30" y="90">Lines of Code:</tspan>
@@ -9,8 +9,7 @@
 <tspan x="30" y="190">Education:</tspan>
 <tspan x="80" y="210" style="fill:#0a30a9">University of British Columbia</tspan>
 <tspan x="30" y="240">Contact:</tspan>
-<tspan x="80" y="260" style="fill:#0a30a9">Discord: Bawnorton#0001</tspan>
-<tspan x="80" y="280" style="fill:#0a30a9">Email: bawnorton@me.com</tspan>
-<tspan x="80" y="300" style="fill:#0a30a9">LinkedIn: Benjamin Norton</tspan>
+<tspan x="80" y="260" style="fill:#0a30a9">General: contact@bawnorton.com</tspan>
+<tspan x="80" y="280" style="fill:#0a30a9">MC Related: minecraft@bawnorton.com</tspan>
 </text>
 </svg>
