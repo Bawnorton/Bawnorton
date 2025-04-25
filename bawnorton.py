@@ -53,11 +53,12 @@ def recursive_loc(owner, repo_name, data, addition_total=0, deletion_total=0, my
                                         request.json()['data']['repository']['defaultBranchRef']['target']['history'],
                                         addition_total, deletion_total, my_commits)
         else:
-            return 0
+            return 0, 0, 0
     if request.status_code == 403:
-        raise Exception(
-            'Too many requests in a short amount of time!\nYou\'ve hit the non-documented anti-abuse limit!')
-    raise Exception('recursive_loc() has failed with a', request.status_code, request.text)
+        raise Exception('Too many requests in a short amount of time!\nYou\'ve hit the non-documented anti-abuse limit!')
+    print("recursive_loc() has failed with a", request.status_code, request.text)
+    print("Failed on", owner, repo_name)
+    return 0, 0, 0
 
 
 def loc_counter_one_repo(owner, repo_name, data, history, addition_total, deletion_total, my_commits):
